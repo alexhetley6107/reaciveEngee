@@ -1,0 +1,125 @@
+
+$salad:  rgb(158, 233, 169);
+$green: rgb(16, 163, 116);
+$red: rgb(221, 97, 97);
+$blue: rgb(82, 121, 227);
+$yellow: rgb(230, 180, 14);
+
+
+.TestPage{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+		
+	.Testing, .End-Test{
+		height: 100%;
+		
+		display: flex;
+		flex-direction: column;
+		align-items: center;	
+		justify-content: space-around;
+		font-size: 4rem;
+	}
+	.Test-quest{
+		font-size: 4rem;
+	}
+	.Test-form{
+		display: flex;
+		margin: 8rem 0;
+	}
+	.Test-input{
+		background-color: $salad;
+		border-bottom: 1px solid gray;
+		font-size: 4rem;
+		text-align: center;
+		margin-right: 2rem;
+	}
+
+	
+	.Test-x{
+		cursor: pointer;
+		position: relative;
+		position: absolute;
+		top: 50px;
+		right: 100px;
+		font-size: 5rem;
+	}
+
+
+
+	.right-wrapper, .wrong-wrapper{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		font-size: 4rem;
+		line-height: 4rem;
+
+	}
+	.right-btn, .wrong-btn, .Test-check-btn, .Test-next-btn, .start-btn{
+		text-transform: uppercase;
+		padding: 1rem 2rem;
+		cursor: pointer;
+		font-size: 3rem;
+		line-height: 3rem;
+		border-radius: 3rem;
+		color: white;
+		transition: all .4s;
+	}
+
+	.Test-check-btn, .start-btn{
+		background-color: $yellow ;
+		border: 3.5px solid $salad;
+		
+		&:hover{
+			color: $yellow;
+			background-color: white;
+			border-color: $yellow;
+		}
+	}
+	.Test-next-btn{
+		background-color: $blue;
+		border: 3.5px solid $salad;
+		
+		&:hover{
+			color: $blue;
+			background-color: white;
+			border-color: $blue;
+		}
+	}
+
+	.right-btn{
+		background-color: $green;
+		border: 3.5px solid $salad;
+		&:hover{
+			color: $green;
+			background-color: white;
+			border-color: $green;
+		}
+	}
+	.wrong-btn {
+		background-color: $red;
+		border: 3.5px solid $salad;
+		&:hover{
+			color: $red;
+			background-color: white;;
+			border-color: $red;
+		}
+	}
+	
+	
+
+	.End-Test-sub{
+		margin: 30px;
+	}
+
+	.StartTest{
+		height: 100%;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

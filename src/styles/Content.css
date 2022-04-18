@@ -1,0 +1,23 @@
+.GreetPage {
+	background-color: rgb(236, 211, 99);
+}
+.LearnPage {
+	background-color: rgb(211, 149, 218);
+}
+.TestPage {
+	background-color: rgb(158, 233, 169);
+}
+.ListPage {
+	background-color: rgb(142, 181, 226);
+}
+.GreetPage,
+.LearnPage,
+.TestPage,
+.ListPage {
+	width: 100%;
+	position: relative;
+	min-height: 90vh;
+	display: flex;	
+	justify-content: center;
+	align-items: center;
+}

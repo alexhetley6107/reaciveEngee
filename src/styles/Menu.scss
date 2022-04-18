@@ -1,0 +1,25 @@
+.Menu {
+	display: flex;
+	justify-content: space-between;
+	color: white;
+
+	&-btn {
+		display: flex;
+		justify-content: center;
+		margin: 0 30px;
+	}
+	&-btn p{
+		align-self: center;
+		font-size: 1.7rem;	
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+
+		color: white;
+    transition: all .3s;
+        &:hover{
+        background-color: white;
+        color: rgb(70, 42, 173);
+        }
+
+	} 
+}
