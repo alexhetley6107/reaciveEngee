@@ -6,7 +6,6 @@ function Endorse(props) {
   return (
     <div className="Endorse">     
       <div className="Endorse-wrap">
-       {/*  <div className="Endorse-close"onClick={props.close}>×</div> */}
         <div className="Endorse-title">{props.title}</div>
 
         <div className="Endorse-btns">

@@ -36,8 +36,8 @@ const ListItem = props => {
         
       <div className="ListItem-body">
         <div className="ListItem-cont">
-          {props.lists[props.numOfList].words.map(item => <WordPair listName={props.lists[props.numOfList].title}
-           item={item} key={item.id}
+          {props.lists[props.numOfList].words.map(item => <WordPair 
+          listName={props.lists[props.numOfList].title}  item={item} key={item.id}
           editWord={props.editWord} deleteWord={props.deleteWord}/>)}
         </div>        
       </div> 

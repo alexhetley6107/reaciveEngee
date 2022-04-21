@@ -1,84 +1,38 @@
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 import "./../../styles/Content.css";
 import "./../../styles/TestPage.scss";
-import EndTest from "./EndTest";
-import RightAnswer from "./RightAnswer";
 import StartTest from "./StartTest";
 import Testing from "./Testing";
-import WrongAnswer from "./WrongAnswer";
-import Endorse from "./../Endorse";
+import EndTest from "./EndTest";
 
 const TestPage = props => {
-
-  const words = [].concat(...props.lists.filter(item=> item.isChoosen === true)
-  .map(item => item.words))
   
-  const [quest, setQuest] = useState(words[Math.floor(Math.random() * words.length)]);  
-  const [isRightAnswer, setRight] = useState(false);  
-  const [isWrongAnswer, setWrong] = useState(false);  
-  const [isEndTest, setEnd] = useState(false);  
-  const [isStopTest, setStop] = useState(false);    
-  const [isEngMode, setEngMode] = useState(false);    
- 
-
-  const checkWord = (input) => {
-    if(input === quest.rusWord) {
-      quest.isChecked = true;
-      setRight(true);
-    } else if(input !== "") {
-      setWrong(true);
-    }
-
-  }
-
-  const showNextWord = () => {
-    if(words.every(item => item.isChecked === true) != true) {
-
-      let item = words[Math.floor(Math.random() * words.length)];
-
-      if(item.isChecked === true){
-        showNextWord();
-      } else {
-        setQuest(item);
-        setWrong(false)
-      }
-    } else {
-      resetCheck();
-      setEnd(true);
-    }
-    
-  }
-
-  const resetCheck = () => {
-    words.forEach(item => item.isChecked = false);  
-    
-  }
-
+  const [isEndTest, setEndTest] = useState(false);  
 
   return (
     <div className="TestPage">
-
-      {props.isTesting ? 
-      <>
-        { !(isRightAnswer || isWrongAnswer || isEndTest) && 
-        <Testing stop={()=>setStop(true)} quest={quest} check={checkWord} next={showNextWord}/>
-        }
-
-        { isRightAnswer && 
-        <RightAnswer showNext={()=> {setRight(false); showNextWord()}}/> }
-
-        { isWrongAnswer && 
-        <WrongAnswer tryAgain={()=> setWrong(false)}/>} 
-
-        { isEndTest && 
-        <EndTest endTest={()=>{ setEnd(false); props.end();}}/>}         
-        
-        {isStopTest && <Endorse title={"Do you want to stop testing ?"} yes={()=>{setStop(false); resetCheck(); props.end(); }}
-       no={()=>setStop(false)} close={()=>setStop(false)}/> }
-
-      </>
-      : 
-      <StartTest start={()=>{ if(props.lists.length !== 0) props.start();}}/> 
+      
+      { props.isTesting 
+        ?       
+      <Testing words={props.words} end={props.end}
+      isEndTest={isEndTest} 
+      setEndTest={()=>{setEndTest(true)}}/>
+      : <>
+      { isEndTest 
+        ?          
+      <EndTest endTest={()=>{ setEndTest(false); }}/>
+      :
+      <StartTest lists = {props.lists} choose={props.choose}
+      start={() => { 
+        if(props.lists.length !== 0 
+          && !props.lists.every(list => list.forTest === false)
+          && !props.lists.filter(list => list.forTest === true)
+          .every(list => list.words.length === 0)) {
+            props.start();
+            props.setWordsForTest(); 
+        } }}  /> 
+      }
+      </>      
     }
       
     </div>
