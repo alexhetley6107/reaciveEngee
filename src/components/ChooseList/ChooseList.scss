@@ -1,0 +1,110 @@
+$salad:  rgb(158, 233, 169);
+$green: rgb(16, 163, 116);
+$red: rgb(221, 97, 97);
+$blue: rgb(82, 121, 227);
+$yellow: rgb(230, 180, 14);
+$pink: rgb(211, 149, 218);
+
+.ChooseList{
+  display: flex;  
+  flex-direction: column;
+  align-items: center;	
+  justify-content: center;
+  margin: 0rem 2rem 2rem;
+
+  &-head{
+    display: flex;
+    align-items: center;
+  }
+
+  &-title{
+    font-size: 2rem;
+    font-style: italic;
+    margin: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px black solid;
+    
+  }
+  &-items.hidden{
+    overflow-x: hidden;
+  }
+  &-items{
+    
+    display: flex; 
+    max-width: 92vw; 
+    overflow-x: scroll;
+    
+    &.hidden{
+      overflow-x: hidden;
+    }
+  
+    &::-webkit-scrollbar{
+      background: rgb(224, 254, 255);  
+      border-radius: 1rem;
+      height: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: rgb(118, 118, 251);   /* цвет бегунка */
+      border-radius: 20px;       /* округлось бегунка */
+      border: 2px solid rgb(224, 254, 255);      /* отступ вокруг бегунка */
+    }
+  
+    &:first-child{
+      margin-left: 0;
+    }
+
+  } 
+
+  &-btn{
+    text-transform: uppercase;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 2rem;
+    border-radius: 3rem;
+    color: white;
+    transition: all .4s;
+      
+    background-color:$yellow ;
+    border: 3.5px solid $salad;
+    
+    &:hover{
+      color: $yellow;
+      background-color: white;
+      border: 3.5px solid $yellow;
+    }
+  }
+
+  .IconList{
+    display: flex;
+    flex-direction: column;
+    font-size: 2rem;
+    min-width: 185px;
+    margin:15px;
+    margin-left: 0;
+    padding: 1rem 2rem;
+    background-color: aliceblue;
+    overflow: hidden;
+  
+
+    &-name{
+      border-bottom: 2px solid black;
+      overflow: hidden;
+    }
+    &-btn {
+      color: white;
+      transition: all 0.4s;
+      text-align: center;
+      background-color: green;
+      margin: 1rem 0;
+      cursor: pointer;			
+      align-self: center;
+      padding: 0.5rem;
+      border-radius: 2rem;
+
+      border: 2.5px solid white;
+      
+
+    }
+  }
+}

@@ -1,0 +1,58 @@
+$salad:  rgb(158, 233, 169);
+$blue: rgb(3, 56, 201);
+
+.LangMode{
+  display: flex;  
+  flex-direction: column;
+  align-items: center;	
+  justify-content: space-around;
+
+  &-title{
+    font-size: 2rem;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px black solid;
+  }
+  &-wrap{
+    display: flex;
+    justify-content: space-around;
+   /*  align-items: center; */
+
+    @media (max-width: 450px){
+      flex-direction: column;
+    }
+  }
+
+  &-btn{
+		text-transform: uppercase;
+		padding: 0rem 1rem;
+		cursor: pointer;
+		font-size: 2rem;
+		line-height: 3rem;
+		border-radius: 3rem;
+		color: white;
+		transition: all .4s;
+    margin-bottom: 1rem;
+
+    background-color: $blue;
+		border: 2.5px solid $salad;
+
+		@media (min-width: 1000px){
+      &:hover{
+        color: $blue;
+        background-color: white;
+        border-color: $blue;
+      }	  
+    }
+		
+	}
+  &-sep{
+    width: 2px;
+    background-color: rgb(0, 0, 0);
+    margin: 0 1rem;
+    @media (max-width: 450px){
+      display: none;
+    }
+  }
+}

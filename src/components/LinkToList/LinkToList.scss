@@ -1,0 +1,21 @@
+.LinkToList{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+
+  h2{
+    font-size: 5rem;
+    @media (max-width: 600px){
+      font-size: 3rem;
+    }
+  }
+  h3{
+    font-size: 3rem;
+    margin: 3rem;
+    @media (max-width: 600px){
+      font-size: 2rem;
+    }
+  }
+}
