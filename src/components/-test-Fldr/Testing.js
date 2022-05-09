@@ -29,7 +29,6 @@ function Testing(props) {
     } else {
       e.preventDefault();
     }
-
   }
 
   const showNextWord = () => {
@@ -47,16 +46,12 @@ function Testing(props) {
       props.setEndTest();
       resetCheck();
       props.end();
-
-    }
-    
+    }    
   }
 
   const resetCheck = () => {
-    words.forEach(item => item.isChecked = false);  
-    
+    words.forEach(item => item.isChecked = false);      
   }
-
 
   return (
   <>

@@ -1,4 +1,5 @@
-export const lists = [
+
+export const defaultLists = [
   { name: "Food", forTest: true, forLearn: true, words: [
     {id:1, engWord: "apple", rusWord: "яблоко", isChecked: false , isLearned: false},
     {id:2, engWord: "meat", rusWord: "мясо", isChecked: false , isLearned: false},

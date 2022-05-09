@@ -1,12 +1,18 @@
 import React, { useRef, useState } from "react";
 import MyBtn from "../../MyBtn/MyBtn";
 import "./RenameList.scss";
+import { useDispatch, useSelector } from "react-redux";
 
 const NewList = props => {
 
   const listInput = useRef();
 
   const[isExist, setExist]  = useState(false);
+  
+  const dispatch = useDispatch();
+  const createNewList = (name) => {
+    dispatch({type:"NEW_LIST", payload:{name:name}})
+  }
 
   return (   
     <div className="RenameList" onClick={props.close} >     
@@ -25,7 +31,7 @@ const NewList = props => {
             if(find) {
               setExist(true);
             } else {
-              props.newList(listInput.current.value.trim()); 
+              createNewList(listInput.current.value.trim()); 
               props.close();  props.lastList(); setExist(false);
             }
             

@@ -1,11 +1,17 @@
 import React, { useRef, useState } from "react";
 import MyBtn from "../../MyBtn/MyBtn";
 import "./RenameList.scss";
+import { useDispatch } from "react-redux";
 
 function RenameList(props) {
 
   const renameInput = useRef();
   const[isExist, setExist]  = useState(false);
+
+  const dispatch = useDispatch();
+  const renameList = (oldName, newName) => {
+    dispatch({type:"RENAME_LIST", payload:{oldName: oldName, newName: newName,}})
+  }
 
   return (
     <div className="RenameList " onClick={props.close}>     
@@ -26,7 +32,7 @@ function RenameList(props) {
             if(find && renameInput.current.value.trim() !== props.oldName ) {
               setExist(true);
               } else {
-                props.rename(props.oldName, renameInput.current.value.trim());
+                renameList(props.oldName, renameInput.current.value.trim());
                 props.close(); setExist(false);
               }            
           }}} > rename

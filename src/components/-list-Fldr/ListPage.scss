@@ -141,7 +141,15 @@
 
     }
   }  
-  
+  .no-list{
+    display: flex;
+    & .MyBtn{
+      margin: 1rem;
+    }
+    @media (max-width: 600px){
+      flex-direction: column;
+    }    
+  }
   
 }
   .SlideList{
@@ -209,6 +217,7 @@
       }      
     
   }
+  
 
 }
 .New-List-btn {
@@ -234,4 +243,6 @@
       border-color: darkblue;
     }
   }
+
+  
 }

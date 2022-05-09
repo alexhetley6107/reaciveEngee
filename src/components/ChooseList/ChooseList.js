@@ -2,8 +2,12 @@ import React, { useEffect, useRef, useState } from "react";
 import MyBtn from "../MyBtn/MyBtn";
 import "./ChooseList.scss";
 import IconList from "./IconList";
+import { useDispatch, useSelector } from "react-redux";
 
 function ChooseList(props) {
+
+  const lists = useSelector( state => state );
+  const dispatch = useDispatch();
 
   const ref = useRef();
   const [state, setState] = useState({
@@ -87,7 +91,7 @@ function ChooseList(props) {
         setTransTest(false);      
       }
     }
-  }, [props.lists])
+  }, [lists])
 
   return (
     <div className="ChooseList">
@@ -97,17 +101,23 @@ function ChooseList(props) {
         <MyBtn border={props.forLearn ? 'plum' : 'palegreen'} back={"blue"}  big={false} 
           transparent={props.forLearn ? transLearn : transTest}
           method={()=>{ props.forLearn ? setTransLearn(true) : setTransTest(true);
-            props.chooseAll(); }}>all</MyBtn>
+            props.forLearn 
+              ? dispatch({type:"CHOOSE_ALL_LEARN"}) 
+              : dispatch({type:"CHOOSE_ALL_TEST"})
+            }}>all</MyBtn>
       </div>      
       <div className={props.scroll ? "ChooseList-items " : "ChooseList-items hidden" }         
         ref={ref} 
         onMouseDown={onMouseDown}
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}>
-          {props.lists.map(list => <IconList key ={list.name} lists={props.lists}
+          {lists.map(list => <IconList key ={list.name} lists={lists}
           name={list.name} amount={list.words.length} 
           choosen={props.forLearn ? list.forLearn : list.forTest} 
-          choose={props.choose} makeTrans={props.makeTrans} />)}
+          choose={props.forLearn 
+            ?  (name) =>dispatch({type:"LEARN_CHOOSE", payload:{name: name}})
+            :  (name) =>dispatch({type:"TEST_CHOOSE", payload:{name: name}})} 
+          />)}
       </div>   
     </div>
   )    

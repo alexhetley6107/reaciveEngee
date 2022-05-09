@@ -5,8 +5,6 @@ import { NavLink } from "react-router-dom";
 
 function Greeting(props) {
 
-  const words = props.words;
-
   return (
     <section className="GreetPage"> 
       <h1>ENGEE greets you!</h1>

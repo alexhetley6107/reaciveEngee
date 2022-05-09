@@ -1,9 +1,6 @@
 import React, { useContext, useRef } from "react";
-import { WordContext } from "../App/App";
 
 function IconList(props) {
-
-  const choose = useContext(WordContext);
 
   const btn = useRef();  
 
@@ -27,7 +24,7 @@ function IconList(props) {
       style={props.choosen ? {backgroundColor: "green"} 
       : {backgroundColor: "red", opacity: 0.5}}
       onMouseOver={mouseOver} onMouseOut={mouseOut}
-      onClick={()=>{ /*  props.makeTrans();  */props.choose(props.name); mouseOut();}}>
+      onClick={()=>{ props.choose(props.name); mouseOut();}}>
         {props.choosen ? "ON" : "OFF"}</div>
     </div>
   )    

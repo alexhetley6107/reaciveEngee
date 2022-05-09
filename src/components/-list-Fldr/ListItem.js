@@ -3,21 +3,22 @@ import "./ListPage.scss";
 import RenameList from "./modals/RenameList";
 import Endorse from "../Endorse/Endorse";
 import AddWord from "./modals/AddWord";
-import ListView from "./WordPair/ListView";
 import MyBtn from "../MyBtn/MyBtn";
 import WordPair from "./WordPair/WordPair";
-
+import { useDispatch } from "react-redux";
 
 const ListItem = props => {
 
   const [isRename, setRename] = useState(false);
-  const [isDeleteList, setDeleteList] = useState(false);
+  const [isRemoveList, setRemoveList] = useState(false);
   const [isAddWord, setAddWord] = useState(false);
 
   let listView = props.currentList.words.map(item => <WordPair 
-    listName={props.currentList.name} key={item.id}
-    eng={item.engWord} rus={item.rusWord} list={props.currentList}
-    editWord={props.editWord} deleteWord={props.deleteWord}  />)
+    listName={props.currentList.name} key={item.engWord}
+    eng={item.engWord} rus={item.rusWord} list={props.currentList}/>)
+
+  const dispatch = useDispatch();
+  
 
   return (
     <div className="ListItem">
@@ -32,7 +33,7 @@ const ListItem = props => {
             method={()=>setRename(true)}>rename</MyBtn>
           <div className="ListItem-sep"></div>          
           <MyBtn big={false} border={'white'} back={'crimson'} 
-            method={()=>setDeleteList(true)}>del</MyBtn>
+            method={()=>setRemoveList(true)}>del</MyBtn>
         </div>        
       </div>      
       <ul className="ListView">
@@ -45,9 +46,9 @@ const ListItem = props => {
       oldName={props.currentList.name}
         /> }
 
-      {isDeleteList && <Endorse title={`Delete ${props.currentList.name} list ?`} 
-      yes={()=>{setDeleteList(false); props.delList(props.currentList.name);}} 
-      no={()=>setDeleteList(false)} close={()=>setDeleteList(false)}/> }
+      {isRemoveList && <Endorse title={`Delete ${props.currentList.name} list ?`} 
+      yes={()=>{setRemoveList(false); props.removeList(props.currentList.name);}} 
+      no={()=>setRemoveList(false)} /> }
 
       {isAddWord && <AddWord close={()=>setAddWord(false)} addWord={props.addWord}
       listName = {props.currentList.name} 

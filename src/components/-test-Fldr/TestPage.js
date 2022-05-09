@@ -30,7 +30,6 @@ const TestPage = props => {
           && !props.lists.filter(list => list.forTest === true)
           .every(list => list.words.length === 0)) {
             props.start();
-            props.setWordsForTest(); 
         } }}  /> 
       }
       </>      

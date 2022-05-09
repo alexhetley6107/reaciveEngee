@@ -38,6 +38,9 @@ $pink: rgb(211, 149, 218);
 	}
 	.Test-quest{
 		font-size: 4rem;
+		@media (max-width: 500px){
+			font-size: 2.5rem;
+		}
 	}
 	.Test-form{
 		display: flex;

@@ -1,12 +1,23 @@
 import React, { useRef, useState } from "react";
 import MyBtn from "../../MyBtn/MyBtn";
 import "./RenameList.scss";
+import { useDispatch, useSelector } from "react-redux";
 
 const EditWord = props => {
 
   const engInput = useRef();
   const rusInput = useRef();
   const[isExist, setExist]  = useState(false);
+
+  const dispatch = useDispatch();
+  const editWord = (listName, engOld, engNew, rusNew) => {
+    dispatch({type:"EDIT_WORD", 
+    payload:{ list:listName, 
+      oldEng: engOld, 
+      newEng: engNew, 
+      newRus: rusNew}})
+    
+  }
 
   return (   
     <div className="RenameList" onClick={props.close}>     
@@ -29,7 +40,7 @@ const EditWord = props => {
             if(find && engInput.current.value.trim() !== props.eng) {
               setExist(true);
             } else {
-              props.editWord(props.listName, props.eng, 
+              editWord(props.listName, props.eng, 
                 engInput.current.value.trim().toLowerCase(), 
                 rusInput.current.value.trim().toLowerCase() );
               props.close(); setExist(false);
