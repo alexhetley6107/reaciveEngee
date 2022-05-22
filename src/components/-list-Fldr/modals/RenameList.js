@@ -25,7 +25,7 @@ function RenameList(props) {
         ref={renameInput} placeholder="new name"></input>
 
         <MyBtn big={false} border={'white'} back={'darkorange'} method={()=>{
-          if(renameInput.current.value !== ''){
+          if(renameInput.current.value.trim() !== ''){
 
             let find = props.lists.find(list => list.name === renameInput.current.value.trim());
 

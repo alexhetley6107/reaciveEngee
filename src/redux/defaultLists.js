@@ -10,7 +10,6 @@ export const defaultLists = [
     {id:7, engWord: "tea", rusWord: "чай", isChecked: false , isLearned: false},
     {id:8, engWord: "coffee", rusWord: "кофе", isChecked: false , isLearned: false},
   ]},
-  { name: "hit", forTest: false, forLearn: false, words: []},
   { name: "Verbs", forTest: false, forLearn: false, words: [
     {id:1, engWord: "swim", rusWord: "плавать", isChecked: false , isLearned: false},
     {id:2, engWord: "run", rusWord: "бегать", isChecked: false , isLearned: false},
@@ -56,6 +55,7 @@ export const defaultLists = [
     {id:10, engWord: "brawn", rusWord: "коричневый", isChecked: false , isLearned: false},
     {id:11, engWord: "silver", rusWord: "серебряный", isChecked: false , isLearned: false},
     {id:12, engWord: "golden", rusWord: "золотой", isChecked: false , isLearned: false},
+    {id:13, engWord: "transparent", rusWord: "прозрачный", isChecked: false , isLearned: false},
   ]},
   { name: "Animals", forTest: false, forLearn: false, words: [
     {id:1, engWord: "cat", rusWord: "кот", isChecked: false , isLearned: false},

@@ -14,7 +14,7 @@ function StartLearn(props) {
           forLearn={true} chooseAll={props.chooseAll} trans={props.trans}
           makeTrans={props.makeTrans}/>
         <MyBtn method={props.start} big={true} 
-          border={'plum'} back={'crimson'}>start</MyBtn>
+          border={'plum'} back={'crimson'}>start learn</MyBtn>
         </>
       : 
         <LinkToList border={'plum'}/>}

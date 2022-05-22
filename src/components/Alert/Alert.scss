@@ -1,6 +1,5 @@
-.Endorse {
+.Alert {
 	position: fixed;
-	z-index: 100;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -35,44 +34,8 @@
 		font-size: 4rem;
 	}
 	&-title{
-		color: black;
 		border-bottom: 2px solid #000;
 		padding-bottom: 3rem;
 		margin-bottom: 3rem;
 	}
-	&-btns{
-		display: flex;
-		cursor: pointer;
-		text-transform: uppercase;
-	}
-	&-yes{
-		padding: 0.5rem 1.5rem;
-		border-radius: 3rem;
-		transition: all .5s;
-		line-height: 2.7rem;
-
-		&:hover{
-		background-color: rgba(195, 20, 20, 0.843);
-		color: white;
-		}
-	}
-	&-no{
-		font-style: italic;
-		padding: 0.5rem 2rem;
-		border-radius: 3rem;
-		transition: all .5s;
-		line-height: 2.7rem;
-		&:hover{
-		background-color: rgba(13, 192, 0, 0.843);
-		color: white;
-		}
-	}
-	&-sep{
-		width: 2px;
-		background-color: rgb(0, 0, 0);
-		margin: 0 3rem;
-		@media (max-width: 1000px){
-			margin: 0 1rem;
-	}
-}
 }

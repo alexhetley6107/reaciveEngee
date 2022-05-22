@@ -35,6 +35,12 @@ $pink: rgb(211, 149, 218);
 				font-size: 3rem;
 			}
 		}
+		&-hint-btn{
+			margin-bottom: 6rem;
+			width: 100%;	
+			text-align: left;
+		}
+
 	}
 	.Test-quest{
 		font-size: 4rem;
@@ -44,8 +50,8 @@ $pink: rgb(211, 149, 218);
 	}
 	.Test-form{
 		display: flex;
-		align-items: center;
-		margin: 7rem 0;
+		align-items:  center;
+		margin-top: 7rem;
 		@media (max-width: 1000px){
 			flex-direction: column;
 			align-items: flex-end;
@@ -59,14 +65,18 @@ $pink: rgb(211, 149, 218);
 		border-bottom: 1px solid gray;
 		font-size: 4rem;
 		text-align: center;
-		margin-right: 2rem;
+		
 		margin: 2rem 0;
-
+		margin-right: 2rem;
 		@media (max-width: 1000px){
 			font-size: 3rem;			
+			margin: 0;
+			margin-bottom: 2rem;
 		}
-		@media (max-width: 500px){
-			font-size: 2rem;			
+		@media (max-width: 550px){
+			font-size: 2rem;	
+			
+
 		}
 	}	
 	
@@ -85,23 +95,9 @@ $pink: rgb(211, 149, 218);
 				margin-bottom: 4rem;
 			}
 		}
-	}	
-
-	
+	}		
 	.right-btn, .wrong-btn{
 		margin-left: 20rem;
-	}
-
-	.MyBtn, .right-btn, .wrong-btn, .Test-check-btn, .Test-next-btn, .start-btn, .start-learn-btn, .All-btn{
-		text-transform: uppercase;
-		padding: 1rem 2rem;
-		cursor: pointer;
-		font-size: 3rem;
-		line-height: 3rem;
-		border-radius: 3rem;
-		color: white;
-		transition: all .4s;
-		  
 	}
 	.EndTest {
 		display: flex;

@@ -32,7 +32,8 @@ const EditWord = props => {
           ref={rusInput} placeholder="russian word"></input>
         <MyBtn big={true} border={'white'} back={'darkorange'}
         method={()=>{
-          if(engInput.current.value !== '' && rusInput.current.value !== ''){
+          if(engInput.current.value.trim() !== '' 
+            && rusInput.current.value.trim() !== '') {
 
             let find = props.list.words.find(word => 
               word.engWord === engInput.current.value.trim().toLowerCase());

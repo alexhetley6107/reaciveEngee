@@ -1,14 +1,14 @@
 body {
-	font-size: 16px;
-	@media (max-width: 1000px) {
-		font-size: 10px;
-	}
 	&.lock{
 		overflow: hidden;
 	}
 }
-.App-wrapper {
+.Home-wrapper {
 	font: 20px/1.1 Arial,sans-serif;
+	@media (max-width:1000px) {
+    font: 16px/1.1 Arial,sans-serif;  
+    
+  }
 	&.lock{
 		overflow: hidden;
 	}

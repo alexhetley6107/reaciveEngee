@@ -18,6 +18,10 @@
   &-words{
     text-align: left;
     overflow: hidden;
+    @media (max-width:400px){
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
   }
 
   &-btns{

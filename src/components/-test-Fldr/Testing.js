@@ -5,6 +5,7 @@ import Endorse from "./../Endorse/Endorse";
 import EndTest from "./EndTest";
 import RightAnswer from "./RightAnswer";
 import MyBtn from "./../MyBtn/MyBtn";
+import Alert from "../Alert/Alert";
 
 function Testing(props) {
 
@@ -17,6 +18,7 @@ function Testing(props) {
   const [isRightAnswer, setRight] = useState(false);  
   const [isWrongAnswer, setWrong] = useState(false);   
   const [isStopTest, setStopTest] = useState(false);    
+  const [isHint, setHint] = useState(false);    
 
   
   const checkWord = (input, e) => {
@@ -62,13 +64,21 @@ function Testing(props) {
       <div className="Test-quest">{engMode ? quest.engWord : quest.rusWord} - ...</div>
       <form className="Test-form">
         <input className="Test-input" type="text"  ref={testInput} placeholder="translate" 
-        onSubmit={(e)=>{e.preventDefault();  checkWord(testInput.current.value);}}/>
+        onSubmit={(e)=>{e.preventDefault(); 
+          if(testInput.current.value.trim() !== ''){              
+          checkWord(testInput.current.value.toLowerCase().trim())}}}/>
         <MyBtn big={true} border={'palegreen'} back={'darkorange '}      
           method={(e)=>{
             e.preventDefault();
-            checkWord(testInput.current.value.toLowerCase())}}>check
+            if(testInput.current.value.trim() !== ''){              
+              checkWord(testInput.current.value.toLowerCase().trim())}}
+            }>check
         </MyBtn>
       </form>    
+      <div className="Testing-hint-btn">
+        <MyBtn big={false} border={'palegreen'} back={'crimson'} 
+        method={()=>{setHint(true)}}>show</MyBtn>
+      </div>
       <MyBtn big={true} border={'palegreen'} back={'blue'} 
       method={()=>{showNextWord(); testInput.current.value = "";}}>next</MyBtn>
     </div>
@@ -85,6 +95,11 @@ function Testing(props) {
     {isStopTest && <Endorse title={"Do you want to stop testing ?"} 
     yes={()=>{setStopTest(false);  props.end(); }} 
     no={()=>setStopTest(false)}/> }
+
+    { isHint && 
+      <Alert close={()=>setHint(false)}>
+        {engMode ? quest.rusWord : quest.engWord}
+      </Alert> }
 
   </>
   )

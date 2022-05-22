@@ -30,7 +30,7 @@ const AddWord = props => {
           ref={rusInput} placeholder="russian word"></input>
         <MyBtn big={true} border={'white'} back={'darkorange'}
         method={()=>{
-          if(engInput.current.value !== '' && rusInput.current.value !== '' ) {
+          if(engInput.current.value.trim() !== '' && rusInput.current.value.trim() !== '') {
 
             let find = props.list.words.find(word =>
                word.engWord === engInput.current.value.trim().toLowerCase());
@@ -38,8 +38,10 @@ const AddWord = props => {
             if(find) {
               setExist(true);
             } else {
-              addWord(props.listName, engInput.current.value.trim().toLowerCase(), 
-                rusInput.current.value.trim().toLowerCase());
+              addWord(props.listName, 
+                engInput.current.value.trim().toLowerCase(), 
+                rusInput.current.value.trim().toLowerCase()
+                );
               props.close(); setExist(false);
             }
            

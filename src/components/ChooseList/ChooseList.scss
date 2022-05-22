@@ -18,28 +18,22 @@ $pink: rgb(211, 149, 218);
   }
 
   &-title{
-    font-size: 2rem;
-    font-style: italic;
-    margin: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px black solid;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    
+    margin: 1rem;/* 
+    padding-bottom: 1rem; *//* 
+    border-bottom: 3px black solid; */
     @media (max-width: 400px){
       margin: 1rem;
     }
     
   }
-  &-items.hidden{
-    overflow-x: hidden;
-  }
   &-items{
     
     display: flex; 
     max-width: 92vw; 
-    overflow-x: scroll;
-    
-    &.hidden{
-      overflow-x: hidden;
-    }
+    overflow-x: auto;
   
     &::-webkit-scrollbar{
       background: rgb(224, 254, 255);  
@@ -57,7 +51,7 @@ $pink: rgb(211, 149, 218);
     }
 
   } 
-
+/* 
   &-btn{
     text-transform: uppercase;
     padding: 1rem 2rem;
@@ -76,7 +70,7 @@ $pink: rgb(211, 149, 218);
       background-color: white;
       border: 3.5px solid $yellow;
     }
-  }
+  } */
 
   .IconList{
     display: flex;

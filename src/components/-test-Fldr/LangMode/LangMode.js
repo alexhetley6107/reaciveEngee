@@ -5,7 +5,7 @@ function LangMode(props) {
 
   return (
     <div className="LangMode">
-      <div className="LangMode-title">Select translate mode</div>
+      <div className="LangMode-title">Select mode</div>
       <div className="LangMode-wrap"> 
         <div className="LangMode-btn" 
           style={props.engMode ? {opacity: 1} : {opacity: 0.4}}

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function ChooseList(props) {
 
-  const lists = useSelector( state => state );
+  const lists = useSelector( state => state.list );
   const dispatch = useDispatch();
 
   const ref = useRef();

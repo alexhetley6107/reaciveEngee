@@ -5,16 +5,20 @@ import { NavLink } from "react-router-dom";
 
 function Greeting(props) {
 
+  const lists = props.lists.length;
+  const words = [].concat(props.lists.map(list => list.words.length))
+      .reduce((sum, current) => sum + current, 0);
+    
+
   return (
     <section className="GreetPage"> 
+      <h3>Welcome, student!</h3>
       <h1>ENGEE greets you!</h1>
-      <h3>Learning foreign words for free</h3>
-     {/*  <h3>Several lists with words are available to you. </h3>
-      <h4>Create your lists, learn, memorize and take tests.</h4> 
-      <h2> Good luck in learning foreign languages!</h2> */}
+      <h3>Learn, Test and create your own lists with foreign words</h3>
+      <h3>now, you have {lists} lists ({words} words)</h3>
 
       <NavLink to="/learn" className="Menu-btn Menu-learn">
-        <MyBtn big={true} border={"peachpuff"} back={"blue"}
+        <MyBtn big={true} border={"deepskyblue"} back={"blue"}
         method={props.showScroll}>get started</MyBtn>
       </NavLink>
       

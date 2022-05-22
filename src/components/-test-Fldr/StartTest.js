@@ -15,7 +15,7 @@ function StartTest(props) {
         <ChooseList lists={props.lists} choose={props.choose} scroll={props.scroll}
           forLearn={false} chooseAll={props.chooseAll} trans={props.trans}/>
         <MyBtn big={true} method={props.start}
-          back={'darkorange '} border={'palegreen'}>start</MyBtn>
+          back={'darkorange '} border={'palegreen'}>start  test</MyBtn>
         </>
         : 
         <LinkToList border={'palegreen'}/>}

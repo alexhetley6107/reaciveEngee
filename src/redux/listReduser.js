@@ -1,26 +1,26 @@
-import { defaultLists } from "./defaultLists"
-import { ADD_WORD, DELETE_WORD, EDIT_WORD, NEW_LIST, RENAME_LIST, REMOVE_LIST, GET_DEFAULT, CHOOSE_ALL_LEARN, CHOOSE_ALL_TEST, LEARN_CHOOSE, TEST_CHOOSE } from "./types";
+import { defaultLists } from "./defaultLists";
+import * as types from "./listTypes";
 
 export const listReducer = (state = defaultLists, action) =>{
   switch (action.type) {
-    case NEW_LIST:
+    case types.NEW_LIST:
       return [...state, { name: action.payload.name, 
           forTest: true, 
           forLearn: true, 
           words: []}];
 
-    case RENAME_LIST :
+    case types.RENAME_LIST :
       return state.map(list => list.name === action.payload.oldName
         ? {...list, name : action.payload.newName}
         : list);
 
-    case REMOVE_LIST:
+    case types.REMOVE_LIST:
       return state.filter(list => list.name !== action.payload.name);
 
-    case GET_DEFAULT :
+    case types.GET_DEFAULT :
       return defaultLists;
 
-      case ADD_WORD :
+      case types.ADD_WORD :
       return state.map(list => list.name === action.payload.list
         ? {...list, words: 
           [{ engWord: action.payload.engWord,
@@ -29,7 +29,7 @@ export const listReducer = (state = defaultLists, action) =>{
             isLearned: false}, ...list.words]}
         : list);
 
-    case EDIT_WORD :
+    case types.EDIT_WORD :
       return state.map(list => list.name === action.payload.list
         ? {...list, words: list.words.map(word => word.engWord === action.payload.oldEng
           ? {engWord: action.payload.newEng,
@@ -39,28 +39,28 @@ export const listReducer = (state = defaultLists, action) =>{
           : word)}
         : list)
 
-    case DELETE_WORD :
+    case types.DELETE_WORD :
       return state.map(list => list.name === action.payload.list
         ? {...list, 
           words: list.words.filter(word => word.engWord !== action.payload.engWord)}
         : list);
 
-      case LEARN_CHOOSE :
+      case types.LEARN_CHOOSE :
         return state.map(list => list.name === action.payload.name
           ? {...list, forLearn: !list.forLearn}
           : list);
   
-      case TEST_CHOOSE :
+      case types.TEST_CHOOSE :
         return state.map(list => list.name === action.payload.name
           ? {...list, forTest: !list.forTest}
           : list);
   
-      case CHOOSE_ALL_LEARN :
+      case types.CHOOSE_ALL_LEARN :
         return state.map(list => list.forLearn === false 
           ? {...list, forLearn: true}
           : list);
           
-      case CHOOSE_ALL_TEST :
+      case types.CHOOSE_ALL_TEST :
         return state.map(list => list.forTest === false 
           ? {...list, forTest: true}
           : list);

@@ -1,5 +1,5 @@
 .Header {
-	background-color: rgb(70, 42, 173);
+	background-color: darkblue;
 	color: aliceblue;
 		padding: 0 2vw;
 		display: flex;
@@ -17,16 +17,23 @@
 		line-height: 4vh;
 		margin: 3vh 0;
 	}
-	&-user{
-		display: flex;
-		align-items: center;
-	}
-	&-ava {
-		background-color: #fff;
-		height: 40px;
-		width: 40px;
-		border-radius: 50%;
-		margin: 1vw;
+	&-logout{
+		cursor: pointer;
+		@media (max-width:1000px) {
+			display: none;
+		}		
+	
+		font-size: 1.5rem;	
+		padding: 0.5rem 1rem;
+		border-radius: 2rem;
+
+		color: white;
+    transition: all .3s;
+        &:hover{
+        background-color: white;
+        color: rgb(70, 42, 173);
+        }
+
 	}
 	.Burger{
 		display: none;

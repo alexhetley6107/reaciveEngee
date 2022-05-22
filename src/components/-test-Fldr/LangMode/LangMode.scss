@@ -8,11 +8,9 @@ $blue: rgb(3, 56, 201);
   justify-content: space-around;
 
   &-title{
-    font-size: 2rem;
-    font-style: italic;
+    font-size: 1.7rem;
+    text-transform: uppercase;
     margin-bottom: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px black solid;
     @media (max-width: 450px){
       margin-bottom: 1rem;
     }
@@ -21,6 +19,7 @@ $blue: rgb(3, 56, 201);
     display: flex;
     justify-content: space-around;
    /*  align-items: center; */
+   margin-bottom: 1rem;
 
     @media (max-width: 450px){
       flex-direction: column;
@@ -36,7 +35,6 @@ $blue: rgb(3, 56, 201);
 		border-radius: 3rem;
 		color: white;
 		transition: all .4s;
-    margin-bottom: 1rem;
 
     background-color: $blue;
 		border: 2.5px solid $salad;
