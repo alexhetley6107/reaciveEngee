@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/engee-react-app/static/css/main.69eb1ec6.css",
+    "main.js": "/engee-react-app/static/js/main.ea664c75.js",
+    "index.html": "/engee-react-app/index.html",
+    "main.69eb1ec6.css.map": "/engee-react-app/static/css/main.69eb1ec6.css.map",
+    "main.ea664c75.js.map": "/engee-react-app/static/js/main.ea664c75.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69eb1ec6.css",
+    "static/js/main.ea664c75.js"
+  ]
+}
