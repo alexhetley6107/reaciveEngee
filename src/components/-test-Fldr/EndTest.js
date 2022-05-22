@@ -14,7 +14,7 @@ function EndTest({endTest}) {
         <MyBtn big={true} border={'palegreen'} back={'darkorange'}
           method={endTest}>great</MyBtn>
         <div className="EndTest-sep"></div>
-        <NavLink to="/list" >
+        <NavLink to="/reaciveEngee/list" >
           <MyBtn big={true} border={'palegreen'} back={'darkblue'}>lists</MyBtn> 
         </NavLink>
       

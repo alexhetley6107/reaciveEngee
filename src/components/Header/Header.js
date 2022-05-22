@@ -22,12 +22,12 @@ function Header(props) {
   const navigate = useNavigate();  
   const logOut = async () => {
     /* signOut(auth); */
-    navigate('/login');
+    navigate('/reaciveEngee/');
   }
 
   return (
     <header className="Header">
-      <NavLink to="/" className="Header-title" onClick={()=>{setMenu(false)}}>ENGEE</NavLink>
+      <NavLink to="/reaciveEngee/greet" className="Header-title" onClick={()=>{setMenu(false)}}>ENGEE</NavLink>
       <Nav  />       
       <div className="Header-logout"  onClick={()=>{setOut(true)}}>Log Out</div>
       <Burger isOn={isMenu} toggle={toggleMenu}/>          

@@ -36,20 +36,20 @@ function HomePage(props) {
     <div className="Home-wrapper">
       <Header  />
       <Routes>
-        <Route path='/' element={<GreetPage lists={lists} />} />
-        <Route path='/learn' element={<LearnPage lists={lists}
+        <Route path='/reaciveEngee/greet' element={<GreetPage lists={lists} />} />
+        <Route path='/reaciveEngee/learn' element={<LearnPage lists={lists}
           isLearning={isLearning}
           start={() => { setLearning(true) }}
           end={() => { setLearning(false) }} 
           words={learnWords}
           />} />                
-        <Route path='/test' element={<TestPage lists={lists}
+        <Route path='/reaciveEngee/test' element={<TestPage lists={lists}
           isTesting={isTesting} 
           start={() => { setTesting(true) }}
           end={() => { setTesting(false) }} 
           words={testWords}
           />} />
-        <Route path='/list' element={<ListPage lists={lists} />} />
+        <Route path='/reaciveEngee/list' element={<ListPage lists={lists} />} />
       </Routes>
       <Footer/>
     </div>

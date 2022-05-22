@@ -19,7 +19,7 @@ function LogIn(props) {
     /* signInWithPopup(auth, provider)
     .then((result) => {
       console.log(result); */
-      navigate('/');/* 
+      navigate('/reaciveEngee/greet');/* 
     })
     .catch((error) => {
       console.log(error);

@@ -11,11 +11,11 @@ function MenuBurger(props) {
 
     <nav className="MenuBurger" onClick={props.toggle}>
       <div className="MenuBurger-wrap" onClick={(e) => e.stopPropagation()}>        
-        <NavLink to="/learn" className="Menu-btn" 
+        <NavLink to="/reaciveEngee/learn" className="Menu-btn" 
           onClick={props.toggle}><p>Learn</p></NavLink>
-        <NavLink to="/test"  className="Menu-btn " 
+        <NavLink to="/reaciveEngee/test"  className="Menu-btn " 
           onClick={props.toggle}><p>Test</p></NavLink>     
-        <NavLink to="/list" className="Menu-btn " 
+        <NavLink to="/reaciveEngee/list" className="Menu-btn " 
           onClick={props.toggle}><p>Lists</p></NavLink> 
         <div className="Menu-btn" 
           onClick={()=>{props.toggle(); props.logOut();}}><p>Log Out</p>

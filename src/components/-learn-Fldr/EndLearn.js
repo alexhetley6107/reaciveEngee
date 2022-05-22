@@ -12,7 +12,7 @@ function EndLearn(props) {
         <MyBtn big={true} border={'plum'} back={'crimson'}
         method={props.endLearn}>repeat</MyBtn>
         <div className="EndLearn-sep"></div>
-        <NavLink to="/test" >
+        <NavLink to="/reaciveEngee/test" >
           <MyBtn big={true} border={'plum'} back={'darkorange'}>test</MyBtn> 
         </NavLink>
       
