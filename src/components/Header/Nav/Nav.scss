@@ -2,26 +2,31 @@
 	display: flex;
 	justify-content: space-between;
 	color: white;
-	@media (max-width:1000px) {
+	@media (max-width: 1000px) {
 		display: none;
 	}
+
 	&-btn {
 		display: flex;
 		justify-content: center;
+
 		margin: 0 30px;
 	}
-	&-btn p{
+	&-btn p {
 		align-self: center;
-		font-size: 1.7rem;	
+		font-size: 1.7rem;
 		padding: 0.5rem 1rem;
 		border-radius: 2rem;
 
 		color: white;
-    transition: all .3s;
-        &:hover{
-        background-color: white;
-        color: rgb(70, 42, 173);
-        }
-
-	} 
+		transition: all 0.3s;
+		&:hover {
+			background-color: white;
+			color: rgb(70, 42, 173);
+		}
+	}
+	&-btn.active p {
+		background-color: white;
+		color: rgb(70, 42, 173);
+	}
 }
