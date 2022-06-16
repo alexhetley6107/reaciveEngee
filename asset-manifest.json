@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/reaciveEngee/static/css/main.69eb1ec6.css",
-    "main.js": "/reaciveEngee/static/js/main.1e8f2b14.js",
+    "main.css": "/reaciveEngee/static/css/main.ffe1ed13.css",
+    "main.js": "/reaciveEngee/static/js/main.cfe72287.js",
     "index.html": "/reaciveEngee/index.html",
-    "main.69eb1ec6.css.map": "/reaciveEngee/static/css/main.69eb1ec6.css.map",
-    "main.1e8f2b14.js.map": "/reaciveEngee/static/js/main.1e8f2b14.js.map"
+    "main.ffe1ed13.css.map": "/reaciveEngee/static/css/main.ffe1ed13.css.map",
+    "main.cfe72287.js.map": "/reaciveEngee/static/js/main.cfe72287.js.map"
   },
   "entrypoints": [
-    "static/css/main.69eb1ec6.css",
-    "static/js/main.1e8f2b14.js"
+    "static/css/main.ffe1ed13.css",
+    "static/js/main.cfe72287.js"
   ]
 }
